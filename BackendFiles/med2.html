@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to Drug Assure</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="med.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+		<div id="brand">
+		<img src="drugassure.png">
+		</div>	
+		</div>
+	</header>
+
+	<section id="main">
+	<div class="container">
+		<p style="font-size: 150%;" id='drug'> You have searched for </p>
+
+		<br><p style="font-size: 150%;">These are drugs related to it:</p>
+		<div id="related">
+		</div>
+	</section
+
+		<form method="get" action="med.html">
+	    <button type="submit">BACK</button>
+		</form>
+		<form method="get" action="med3.html">
+	    <button type="submit">NEXT</button>
+		</form>
+
+	
+		
+	</div>
+	
+
+	<footer>
+	<p>Group B, Copyright &copy; 2017</p>
+</footer>
+<script type="text/javascript" src='jquery.js'></script>
+
+<script>
+	
+ $(document).ready(function(){
+    console.log(window.location.search.split('=')[1])
+    var drugname=window.location.search.split('=')[1];
+    $('#drug').html('You have searched for '+ `<a href=med3.html?name=${drugname}> ${drugname}</a>`);
+       $.get('getRelatedDrugs.php?id='+drugname,null,function(resp){
+       	console.log(resp);
+    	JSON.parse(resp).forEach(function(drug,index){
+    		$('div#related').append(`<p><a target='_blank' href=med3.html?name=${drug.name}>${drug.name} </a></p>`);
+    	})
+    })
+});
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to Drug Assure</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="med.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+		<div id="brand">
+		<img src="drugassure.png">
+		</div>	
+		</div>
+	</header>
+	<form method="get" action="med.php">
+    <button type="submit">HOME</button>
+	</form>
+
+	<section id="body">
+	<div class="container">
+	<p>Drug Assure is the most popular, comprehensive and up-to-date source of drug information online. Providing free, peer-reviewed, accurate and independent data on more than 100 prescription drugs, over-the-counter medicines & natural products.</p>
+		<p>COMMON DRUGS</p>
+		<div class="drugs">
+		</div>
+	</div>
+	</section>
+
+	<footer>
+	<p>Group B, Copyright &copy; 2017</p>
+</footer>
+</body>
+<script type="text/javascript" src='jquery.js'></script>
+
+<script>
+	
+ $(document).ready(function(){
+    $.get('getDrugs.php',null,function(resp){
+    	JSON.parse(resp).forEach(function(drug,index){
+    		$('div.drugs').append(`<p> <a target='_blank' href=med3.html?name=${drug.name}>  ${drug.name} </a></p>`)
+    	})
+    })
+    
+});
+
+
+</script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to Drug Assure</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="med.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+		<div id="brand">
+		<img src="drugassure.png">
+		</div>	
+		</div>
+	</header>
+
+	<div class="container display">
+		<div class="drugname" style="height: 150px;">
+			<p class="name">Disease Name</p>
+			<h4 id="drug_name"> </h4>
+
+			<p class="manufacturer">Manufacturer Name</p>
+			<h4 id="man_name">  </h4>
+		</div>
+
+		<div style="height: 200px">
+		<div class="col-md-3">
+			<span>Diseases</span>
+		</div>
+		<div class="col-md-9">
+			<ul>Tade</ul>
+		</div>
+		</div>
+		<div class="clearfix"></div>
+
+		<div style="height: 200px;">
+		<div class="col-md-3">
+			<span>Dosage</span>
+		</div>
+
+		<div class="col-md-9">
+			<ul>Tobi</ul>
+		</div>
+		</div>
+		<div class="clearfix"></div>
+
+		<div style="height: 200px;">
+		<div class="col-md-3">
+			<span>Side Effect</span>
+		</div>
+		<div class="col-md-9">
+			<ul>Jerry</ul>
+		</div>
+		</div>
+
+	</div>
+
+	<form class="col-md-6" method="get" action="med.php">
+    <button type="submit">HOME</button>
+	</form>
+	<form class="pull-right col-md-6 "  method="get" action="med2.html">
+    <button type="submit">BACK</button>
+	</form>
+	<div class="clearfix"></div>
+
+
+
+
+	<footer>
+	<p>Group B, Copyright &copy; 2017</p>
+</footer>
+
+<script type="text/javascript" src='jquery.js'></script>
+
+<script>
+	
+ $(document).ready(function(){
+    console.log(window.location.search.split('=')[1])
+    var drugname=window.location.search.split('=')[1];
+
+       $.get('getDrugDetails.php?id='+drugname,null,function(resp){
+       	
+       	var response = JSON.parse(resp)
+       	console.log(response);
+       	$('#drug_name').text(drugname.toUpperCase());
+        $('#man_name').text(response.manufacturer.name)
+    	// JSON.parse(resp).forEach(function(drug,index){
+    	// 	$('div#related').append(`<p><a target='_blank' href=med3.html?name=${drug.name}>${drug.name} </a></p>`);
+    	// })
+    })
+});
+
+
+</script>
+</body>
+</html>
