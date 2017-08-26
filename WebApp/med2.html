@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to Drug Assure</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/med.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+		<div id="brand">
+		<img src="image/pharmicon.png" class="pic">
+		<h1><span class="highlight">DRUG</span> ASSURE</h1>
+		</div>	
+		</div>
+	</header>
+	<div id="menu">
+    <ul>
+        <li><a href="med.html" <?php if($_GET['currentPage'] == 'med') echo 'class="active"'; ?>HOME</a></li>
+        <li><a href="med4.html" <?php if($_GET['currentPage'] == 'med4') echo 'class="active"'; ?>DRUGS A-Z</a></li>
+    </ul>
+</div>
+
+	<section id="main">
+	<div class="container">
+		<p> You have searched for </p>
+		<p><a href= ""> Flagyl </a></p>
+		<p><a href= ""> Ibuprofen </a></p>
+		<p><a href= ""> Lipitor </a></p>
+		<p><a href= ""> Protonix </a></p>
+	</div>
+	</section>
+	
+	<form method="get" action="file:///C:/Users/TOMI-OGUNDIRAN/Desktop/drug%20web/med3.html">
+    <button type="submit">NEXT</button>
+	</form>
+	
+
+	<footer>
+	<p>Group B, Copyright &copy; 2017</p>
+	<p>All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to Drug Assure</title>
+	<meta charset="utf-8">
+	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+	<link rel="stylesheet" type="text/css" href="css/med.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+		<div id="brand">
+		<img src="image/pharmicon.png" class="pic">
+		<h1><span class="highlight">DRUG</span> ASSURE</h1>
+		</div>	
+		</div>
+	</header>
+	<div id="menu">
+    <ul>
+        <li><a href="med.html" <?php if($_GET['currentPage'] == 'med') echo 'class="active"'; ?>HOME</a></li>
+        <li><a href="med4.html" <?php if($_GET['currentPage'] == 'med4') echo 'class="active"'; ?>DRUGS A-Z</a></li>
+    </ul>
+</div>
+
+	<section id="main">
+	<div class="container">
+		<marquee behavior="slide" direction="left">
+		<p>YOU ARE WELCOME TO</p>
+		<h2>DRUG ASSURE</h2>	
+		</marquee>
+	</div>
+		<div id="tfheader">
+		<form id="tfnewsearch" method="get" action="file:///C:/Users/TOMI-OGUNDIRAN/Desktop/drug%20web/med2.html">
+		        <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+		</form>
+	<div class="tfclear"></div>
+	</div>
+	</section>
+	<section id="body">
+	<div class="container">
+	<p>Drug Assure is the most popular, comprehensive and up-to-date source of drug information online. Providing free, peer-reviewed, accurate and independent data on more than 100 prescription drugs, over-the-counter medicines & natural products.</p>
+		<p>COMMON DRUGS</p>
+		<p><a href= ""> Flagyl </a>
+		<p><a href= ""> Ibuprofen </a>
+		<p><a href= ""> Lipitor </a>
+		<p><a href= ""> Protonix </a>
+	</div>
+	</section>
+
+<footer>
+	<p>Group B, Copyright &copy; 2017</p>
+	<p>All rights reserved.</p>
+</footer>
+</body>
+</html>
