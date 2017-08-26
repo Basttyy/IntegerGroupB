@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:sqllitesample"
+             x:Class="sqllitesample.MainPage"
+             Title="DrugAssure"
+             Style="{StaticResource pageStyle}">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem x:Name="About"
+                 Text="About"
+                 Priority="0"
+                 Order="Secondary"/>
+  </ContentPage.ToolbarItems>
+  <StackLayout>
+    <SearchBar x:Name="MainSearchBar"
+               TextChanged="onText_Changed"
+               TextColor="{StaticResource textColor}"
+               Placeholder="Type To search Drug"/>
+    <ListView x:Name="MainListView"
+            Header=""
+            HasUnevenRows="True"
+            IsPullToRefreshEnabled="True">
+    <ListView.HeaderTemplate>
+      <DataTemplate>
+        <Grid Padding="12"
+              BackgroundColor="{StaticResource backgroundColor}">
+          <Label Text="Drug List"
+                 TextColor="{StaticResource textColor}"
+                 FontSize="20"/>
+        </Grid>
+      </DataTemplate>
+    </ListView.HeaderTemplate>
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <TextCell Text="{Binding DrugName}"
+                  TextColor="{StaticResource textColor}"
+                  Detail="{Binding Diseases}"
+                  DetailColor="{StaticResource primaryTextColor}"/>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+  </StackLayout>
+
+<!--
+<DataTemplate>
+        <ViewCell>
+          <Grid Padding="12">
+            <Label Text="{Binding DrugName}"
+                   FontSize="16"/>
+          </Grid>
+        </ViewCell>
+      </DataTemplate>
+-->
+</ContentPage>

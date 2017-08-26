@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="sqllitesample.DrugDetailPage"
+             Title="DrugAssure"
+             Style="{StaticResource pageStyle}">
+    <TableView Intent="Form"
+               HasUnevenRows="True"
+               RowHeight="50">
+      <TableRoot>
+        <TableSection Title="Drug Details">
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Drug name"
+                       TextColor="{StaticResource textColor}"
+                       Font="Bold"
+                       FontSize="20"/>
+                <Label x:Name="nameLabel"
+                       HorizontalOptions="StartAndExpand"
+                       FontSize="14"
+                       TextColor="{StaticResource primaryTextColor}"/>
+            </StackLayout>
+          </ViewCell>
+        </TableSection>
+        <TableSection>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">                                            
+                <Label Text="Applicabel diseases:"
+                       TextColor="{StaticResource textColor}"
+                       Font="Bold"
+                       FontSize="20"/>
+                <Label x:Name="diseaseLabel"
+                       HorizontalOptions="StartAndExpand"
+                       FontSize="14"
+                       TextColor="{StaticResource primaryTextColor}"/>
+            </StackLayout>
+          </ViewCell>
+        </TableSection>
+        <TableSection>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Suggested dosage of use:"
+                       TextColor="{StaticResource textColor}"
+                       Font="Bold"
+                       FontSize="20"/>
+                <Label x:Name="dosageLabel"
+                       HorizontalOptions="StartAndExpand"
+                       FontSize="14"
+                       TextColor="{StaticResource primaryTextColor}" />
+            </StackLayout>
+          </ViewCell>
+        </TableSection>
+        <TableSection>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Possible negative effects"
+                       TextColor="{StaticResource textColor}" 
+                       Font="Bold"
+                       FontSize="20"/>
+                <Label x:Name="effectLabel"
+                       HorizontalOptions="StartAndExpand"
+                       FontSize="14"
+                       TextColor="{StaticResource primaryTextColor}" />
+            </StackLayout>
+          </ViewCell>
+        </TableSection>
+      </TableRoot>
+    </TableView>
+<!--
+<TableView Intent="Settings">
+    <TableRoot>
+        <TableSection Title="Ring">
+            <SwitchCell Text="New Voice Mail" />
+      <SwitchCell Text="New Mail" On="true" />
+        </TableSection>
+    </TableRoot>
+</TableView>
+-->
+</ContentPage>

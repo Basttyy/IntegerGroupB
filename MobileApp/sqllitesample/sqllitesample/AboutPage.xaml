@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="sqllitesample.AboutPage"
+             Style="{StaticResource pageStyle}">
+  <StackLayout Orientation="Vertical"
+               VerticalOptions="Start"
+               Padding="0,50"
+               HorizontalOptions="Center">
+    <Image Source="splashscreen.png"
+           HeightRequest="80"
+           WidthRequest="80"/>
+    <StackLayout VerticalOptions="Start"
+                 HorizontalOptions="Center"
+                 Padding="40,0,0,0">
+      <Label Text="DrugAssure is the mobile appliction for DrugAssure Website.
+           Drug Assure App has auto-search that helps you to filter out close match as you search for a drug.
+           Clicking on a drug on the list takes you to a page That tells you more about the drug.
+           By basttyy basttyy@gmail.com.
+           'Group B'"
+         TextColor="{Binding textColor}"
+         FontSize="15"
+         HorizontalOptions="Center" />
+    </StackLayout>    
+  </StackLayout>  
+</ContentPage>
